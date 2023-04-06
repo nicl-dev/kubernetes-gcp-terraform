@@ -4,8 +4,8 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = false
 }
 
-resource "google_compute_subnetwork" "subnetwork" {
-  name          = "kubernetes-dev"
+resource "google_compute_subnetwork" "subnet" {
+  name          = "kubernetes"
   ip_cidr_range = "10.240.0.0/24"
   network       = google_compute_network.vpc_network.id
 }
